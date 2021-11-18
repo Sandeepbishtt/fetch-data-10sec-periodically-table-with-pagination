@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Component tests Render correctly initial document 1`] = `
+<div>
+  <div
+    style="height: 750px;"
+  >
+    <h1
+      style="text-align: center;"
+    >
+      Pagination with API
+    </h1>
+    <div
+      class="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+    >
+      <div
+        class="MuiTableContainer-root"
+      >
+        <table
+          aria-label="sticky table"
+          class="MuiTable-root MuiTable-stickyHeader"
+        >
+          <thead
+            class="MuiTableHead-root"
+          >
+            <tr
+              class="MuiTableRow-root MuiTableRow-head"
+            >
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader"
+                scope="col"
+                style="min-width: 170px; background-color: rgb(186, 255, 219);"
+              >
+                Created_at
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader"
+                scope="col"
+                style="min-width: 100px; background-color: rgb(186, 255, 219);"
+              >
+                Title
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader"
+                scope="col"
+                style="min-width: 170px; background-color: rgb(186, 255, 219);"
+              >
+                Author
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader"
+                scope="col"
+                style="min-width: 170px; background-color: rgb(186, 255, 219);"
+              >
+                Url
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="MuiTableBody-root"
+          />
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
