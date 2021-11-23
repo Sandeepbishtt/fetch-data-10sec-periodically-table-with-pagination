@@ -17,7 +17,6 @@ const PaginationTable = (props: any) => {
   const history = useHistory();
   const data = useSelector(getAllData);
   const load = useSelector(isLoadingData);
-  console.log(data)
 
   const columns = [
     { id: "created_at", label: "Created_at", minWidth: 170 },
