@@ -1,21 +1,9 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import PaginationTable from '../Components/PaginationTable'
+import JsonDetail from '../Components/JsonDetail'
 import {Provider} from 'react-redux'
 import store from '../Redux/Store'
 import ReactDOM from 'react-dom'
 import {BrowserRouter} from 'react-router-dom'
-test('renders created_at tableHead', () => {
-  render(
-<BrowserRouter>
-<Provider store={store}>
-    <PaginationTable/>
-  </Provider>
-</BrowserRouter>
-    );
-  const linkElement = screen.getByText(/created_at/i);
-  expect(linkElement).toBeInTheDocument();
-});
 
 
 describe('testing snapshot' , () => {
@@ -27,7 +15,7 @@ beforeEach(()=>{
   ReactDOM.render(
     <BrowserRouter>
     <Provider store={store}>
-    <PaginationTable/>
+    <JsonDetail/>
   </Provider>
 </BrowserRouter>,container)
 })
@@ -39,4 +27,5 @@ afterEach(()=>{
 it('render correctly',() =>{
   expect(container).toMatchSnapshot()
 })
+
 })
