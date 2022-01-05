@@ -1,13 +1,15 @@
 import React,{useState} from 'react'
 import {Paper,TableContainer,TableRow,TableCell,TableHead,TableBody,Pagination,Table} from '@mui/material'
 import {useSelector} from 'react-redux'
-import {fetchData} from '../Redux/Reducer'
+import {fetchData,isLoad} from '../Redux/Reducer'
 import moment from 'moment'
+import {CircularProgress} from '@mui/material'
 import {useHistory} from 'react-router-dom'
 const PaginationTable = (props:any) =>{
 
 	const history = useHistory()
 const data = useSelector(fetchData)
+  const load = useSelector(isLoad)
 const [page,setPage] = useState(0)
 const [pageValue,setPageValue] = useState(0)
 const jsonDetailHandler =(e:any,val:any) =>{
@@ -24,6 +26,7 @@ const detailHandler =(value:any) =>{
 
 return (
 	<>
+	{load ? <CircularProgress size ={80} style={{marginLeft:'50%'}} /> :
 <Paper>
 <TableContainer>
 <Table stickyHeader aria-label = 'sticky table'>
@@ -59,6 +62,7 @@ shape='rounded'
 />
 </TableContainer>
 </Paper>
+}
 </>
 	)
 }

@@ -5,6 +5,11 @@ import {Provider} from 'react-redux'
 import store from './Redux/Store'
 import ReactDOM from 'react-dom'
 import {BrowserRouter} from 'react-router-dom'
+import {shallow,mount} from 'enzyme'
+import moxios from 'moxios'
+
+
+
 test('renders learn react link', () => {
   render(
 <BrowserRouter>
@@ -39,6 +44,8 @@ it('render correctly',() =>{
   expect(container).toMatchSnapshot()
 })
 
+
+
 test('render async calling api',async()=>{
   render(
     <BrowserRouter>
@@ -47,7 +54,21 @@ test('render async calling api',async()=>{
       </Provider>
     </BrowserRouter>
         )
-        const listElements = await screen.getAllByRole('table')
-        expect(listElements).not.toHaveLength(0)
+        const listElements = await screen.getAllByRole('listitem')
+        expect(listElements).toHaveLength(6)
 })
 })
+
+
+test('render without crashing',() =>{
+  const wrapper = mount(
+    <BrowserRouter>
+    <Provider store={store}>
+        <App />
+      </Provider>
+    </BrowserRouter>)
+  const appComponent = wrapper.find("[data-test='component-app']")
+  // console.log(wrapper.debug())
+  expect(appComponent.length).toBe(1)
+}) 
+

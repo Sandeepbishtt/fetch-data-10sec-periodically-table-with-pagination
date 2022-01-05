@@ -6,6 +6,8 @@ import ReactDOM from 'react-dom'
 import {BrowserRouter} from 'react-router-dom'
 
 
+
+
 describe('testing snapshot' , () => {
 let container:HTMLDivElement;
 
@@ -14,9 +16,7 @@ beforeEach(()=>{
   document.body.appendChild(container)
   ReactDOM.render(
     <BrowserRouter>
-    <Provider store={store}>
     <JsonDetail/>
-  </Provider>
 </BrowserRouter>,container)
 })
 afterEach(()=>{
@@ -29,3 +29,4 @@ it('render correctly',() =>{
 })
 
 })
+

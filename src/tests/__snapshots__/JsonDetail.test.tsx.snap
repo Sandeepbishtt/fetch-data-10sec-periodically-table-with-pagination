@@ -2,6 +2,8 @@
 
 exports[`testing snapshot render correctly 1`] = `
 <div>
-  <div />
+  <div
+    data-test="component-app"
+  />
 </div>
 `;
